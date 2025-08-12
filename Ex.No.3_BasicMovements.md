@@ -1,6 +1,6 @@
 # Ex.No: 3  Basic movements in Unity 
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:  12-08-25                                                                          
+### REGISTER NUMBER : 212222240100
 ### AIM: 
  To learn the basic movements translation,scaling and rotation of game objects through code.
 ### Procedure:
@@ -33,28 +33,58 @@ public class TransformOperations : MonoBehaviour
         // Translate (Move) object1 along the X-axis- Time.deltaTime to make movement smooth across all frame rates
         if (object1 != null)
         {
-            object1.position += Vector3.right * moveSpeed * Time.deltaTime;
+           // object1.position += Vector3.right * moveSpeed;
+               object1.Translate(0.02f,0,0);
+
         }
 
         // Rotate object2 around the Y-axis
         if (object2 != null)
         {
-            object2.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+            //object2.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+            //object2.Rotate(0,0.02f.0);
         }
 
         // Scale object3 up and down
         if (object3 != null)
         {
-            float scaleChange = Mathf.PingPong(Time.time * scaleSpeed, 1f) + 0.5f; // generates a value that moves back and forth between 0 and length
-            object3.localScale = new Vector3(scaleChange, scaleChange, scaleChange);
+           // float scaleChange = Mathf.PingPong(Time.time * scaleSpeed, 1f) + 0.5f; // generates a value that moves back and forth between 0 and length
+           // object3.localScale = new Vector3(scaleChange, scaleChange, scaleChange);
+            object3.localScale+=new Vector3(0.02f.0.02f,0);
+
         }
     }
 }
 ```
+```
+using UnityEngine;
+
+public class NewMonoBehaviourScript : MonoBehaviour
+{
+    public Transform o1;
+    public Transform o2;
+    public Transform o3;
+    void Start()
+    {
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        o1.Translate(0.2f,0,0);
+        o2.Rotate(0.2f,0,0);
+        o3.localScale+=new Vector3(0,0.02f,0);
+    }
+}
+```
+
 ### Output:
 
 
-
+<img width="1919" height="1079" alt="Screenshot 2025-08-12 144922" src="https://github.com/user-attachments/assets/9f8fbf1a-caf1-40ae-8467-6b64c73f4863" />
+<img width="1919" height="1079" alt="Screenshot 2025-08-12 144935" src="https://github.com/user-attachments/assets/94c70820-532d-4973-9a06-dfad194977a0" />
 
 
 
